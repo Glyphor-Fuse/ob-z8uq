@@ -3,20 +3,7 @@ export default function ImageStatement() {
     <section className="relative w-full py-32 bg-ink text-paper overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-20">
         <img 
-          src="<div className="relative">
-  <img 
-    src="https://images.pexels.com/photos/18599094/pexels-photo-18599094.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-    alt="Grainy black and white abstract texture with scratches, ideal for artistic backgrounds."
-    width="6819"
-    height="10000"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
-    <a href="https://www.pexels.com/photo/monochrome-noise-structured-photo-18599094/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
-      Photo by Joana Miriam on Pexels
-    </a>
-  </div>
-</div>" 
+          src="https://images.pexels.com/photos/18599094/pexels-photo-18599094.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
           className="w-full h-full object-cover"
           alt="Texture"
         />
@@ -26,20 +13,7 @@ export default function ImageStatement() {
         <div className="order-2 md:order-1">
            <div className="relative">
              <img 
-               src="<div className="relative">
-  <img 
-    src="https://images.pexels.com/photos/33018517/pexels-photo-33018517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-    alt="Side profile of a man in a black cap against a dark background."
-    width="1811"
-    height="2263"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
-    <a href="https://www.pexels.com/photo/side-profile-portrait-of-a-man-wearing-a-cap-33018517/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
-      Photo by Max Zaharenkov on Pexels
-    </a>
-  </div>
-</div>"
+               src="https://images.pexels.com/photos/33018517/pexels-photo-33018517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                alt="Profile"
                className="w-full max-w-md mx-auto sepia-[.3] grayscale"
              />

@@ -4,20 +4,7 @@ export default function HeroCover() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="<div className="relative">
-  <img 
-    src="https://images.pexels.com/photos/19621241/pexels-photo-19621241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-    alt="Black and white image of a fashion model at a gas station during the night."
-    width="4000"
-    height="5000"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
-    <a href="https://www.pexels.com/photo/woman-wearing-white-dress-in-black-and-white-19621241/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
-      Photo by Dmitry Daltonik on Pexels
-    </a>
-  </div>
-</div>" 
+          src="https://images.pexels.com/photos/19621241/pexels-photo-19621241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
           alt="Editorial Cover" 
           className="w-full h-full object-cover grayscale contrast-125"
         />

@@ -21,20 +21,7 @@ export default function OverlappingGrid() {
         <div className="md:col-span-5 relative z-10 md:mt-0">
           <div className="aspect-[3/4] w-full bg-stone overflow-hidden">
              <img 
-               src="<div className="relative">
-  <img 
-    src="https://images.pexels.com/photos/4814061/pexels-photo-4814061.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-    alt="A detailed shot of a crumpled black fabric, showcasing its smooth and wrinkled texture in a monochromatic tone."
-    width="4245"
-    height="6368"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
-    <a href="https://www.pexels.com/photo/black-textile-with-creases-4814061/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
-      Photo by Karola G on Pexels
-    </a>
-  </div>
-</div>" 
+               src="https://images.pexels.com/photos/4814061/pexels-photo-4814061.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
                alt="Fabric Detail"
                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
              />
@@ -48,20 +35,7 @@ export default function OverlappingGrid() {
         <div className="md:col-span-3 flex flex-col justify-end relative md:-ml-12 z-20 mt-12 md:mt-32">
           <div className="aspect-[4/5] w-3/4 self-end shadow-2xl">
             <img 
-               src="<div className="relative">
-  <img 
-    src="https://images.pexels.com/photos/3756941/pexels-photo-3756941.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-    alt="Portrait of a young woman wearing headphones, enjoying music indoors with a casual expression."
-    width="5828"
-    height="3990"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
-    <a href="https://www.pexels.com/photo/woman-in-gray-and-yellow-sweater-holding-white-headphones-3756941/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
-      Photo by Sound On on Pexels
-    </a>
-  </div>
-</div>" 
+               src="https://images.pexels.com/photos/3756941/pexels-photo-3756941.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
                alt="Model Pose"
                className="w-full h-full object-cover grayscale"
              />
@@ -82,20 +56,7 @@ export default function OverlappingGrid() {
         </h2>
         <div className="absolute top-1/4 right-0 md:right-24 w-full md:w-1/2 h-[500px] z-10">
            <img 
-             src="<div className="relative">
-  <img 
-    src="https://images.pexels.com/photos/6226716/pexels-photo-6226716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-    alt="A creative studio portrait of two models in white clothing posing artistically against a green background."
-    width="6082"
-    height="4055"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
-    <a href="https://www.pexels.com/photo/models-standing-together-at-studio-6226716/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
-      Photo by cottonbro studio on Pexels
-    </a>
-  </div>
-</div>" 
+             src="https://images.pexels.com/photos/6226716/pexels-photo-6226716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
              alt="Duo Shot"
              className="w-full h-full object-cover"
            />
