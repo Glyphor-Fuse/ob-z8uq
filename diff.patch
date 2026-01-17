@@ -1,0 +1,628 @@
+diff --git a/index.html b/index.html
+index 59f1d53..cabf372 100644
+--- a/index.html
++++ b/index.html
+@@ -1,5 +1,14 @@
+-<head>
+-  <meta charset="UTF-8" />
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-  <title>Glyphor Fuse Project</title>
+-</head>
++<!doctype html>
++<html lang="en">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <meta name="description" content="NOIR ET BLANC - Avant-garde Fashion Editorial" />
++    <meta name="theme-color" content="#F4F1EA" />
++    <title>NOIR ET BLANC | Editorial</title>
++  </head>
++  <body class="bg-paper text-ink antialiased overflow-x-hidden selection:bg-accent selection:text-paper">
++    <div id="root"></div>
++    <script type="module" src="/src/main.tsx"></script>
++  </body>
++</html>
+\ No newline at end of file
+diff --git a/src/App.tsx b/src/App.tsx
+index 2aebe29..f204a8b 100644
+--- a/src/App.tsx
++++ b/src/App.tsx
+@@ -1,14 +1,43 @@
++import React from 'react';
++import MinimalNav from './components/MinimalNav';
++import HeroCover from './components/HeroCover';
++import OverlappingGrid from './components/OverlappingGrid';
++import MarqueeStrip from './components/MarqueeStrip';
++import ImageStatement from './components/ImageStatement';
++import CollectionList from './components/CollectionList';
++import Footer from './components/Footer';
++
+ function App() {
+   return (
+-    <div className="flex min-h-screen items-center justify-center bg-black text-white">
+-      <div className="text-center">
+-        <h1 className="text-2xl font-bold tracking-tight text-zinc-500">
+-          Glyphor Fuse Skeleton
+-        </h1>
+-        <p className="mt-2 text-sm text-zinc-700">Waiting for generation...</p>
+-      </div>
++    <div className="min-h-screen flex flex-col w-full bg-paper">
++      <MinimalNav />
++      
++      <main className="flex-grow w-full">
++        <HeroCover />
++        
++        <MarqueeStrip text="FALL WINTER 2025 — COLLECTION 04 — PARIS TOKYO NEW YORK — " />
++        
++        <OverlappingGrid />
++        
++        <ImageStatement />
++        
++        <CollectionList />
++        
++        <section className="py-32 px-6 flex justify-center items-center">
++          <div className="max-w-4xl text-center">
++            <p className="font-serif text-3xl md:text-5xl italic leading-tight">
++              "Fashion is not something that exists in dresses only. Fashion is in the sky, in the street, fashion has to do with ideas, the way we live, what is happening."
++            </p>
++            <p className="mt-8 font-sans text-xs tracking-[0.2em] uppercase text-ink/60">
++              — The Manifesto
++            </p>
++          </div>
++        </section>
++      </main>
++
++      <Footer />
+     </div>
+   );
+ }
+ 
+-export default App;
++export default App;
+\ No newline at end of file
+diff --git a/src/components/CollectionList.tsx b/src/components/CollectionList.tsx
+new file mode 100644
+index 0000000..49d9e6e
+--- /dev/null
++++ b/src/components/CollectionList.tsx
+@@ -0,0 +1,102 @@
++const items = [
++  { id: '01', title: 'The Trench', price: '$850', img: '<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/5119921/pexels-photo-5119921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="Three stylish adults in trench coats exude urban fashion chic as they hold hands outdoors."
++    width="4400"
++    height="2933"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/people-wearing-beige-trench-coats-standing-side-by-side-5119921/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by cottonbro studio on Pexels
++    </a>
++  </div>
++</div>' },
++  { id: '02', title: 'Silk Blazer', price: '$620', img: '<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/34461738/pexels-photo-34461738.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="Smiling woman in a black blazer exuding confidence, photographed indoors."
++    width="1921"
++    height="2601"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/confident-professional-woman-smiling-in-blazer-34461738/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by Sean P. Twomey on Pexels
++    </a>
++  </div>
++</div>' },
++  { id: '03', title: 'Wide Trouser', price: '$440', img: '<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/7202826/pexels-photo-7202826.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="Four women stand in colorful trousers against a white background, showcasing diversity and fashion."
++    width="5943"
++    height="3962"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/woman-in-white-tank-top-on-white-background-7202826/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by Tima Miroshnichenko on Pexels
++    </a>
++  </div>
++</div>' },
++  { id: '04', title: 'Oxford Shirt', price: '$320', img: '<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/10510955/pexels-photo-10510955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="Charming view of a historic street in Oxford, England with classic architecture and overcast sky."
++    width="3024"
++    height="4032"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/people-walking-on-the-street-near-the-houses-under-the-cloudy-sky-10510955/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by Anna Kozlova on Pexels
++    </a>
++  </div>
++</div>' },
++];
++
++export default function CollectionList() {
++  return (
++    <section className="py-24 border-b border-ink/10">
++      <div className="px-6 mb-12 flex items-baseline justify-between">
++        <h3 className="font-serif text-4xl">The Edit</h3>
++        <a href="#" className="font-sans text-xs uppercase underline">Shop All</a>
++      </div>
++      
++      {/* Horizontal Scroll Container */}
++      <div className="flex overflow-x-auto gap-1 px-6 pb-12 no-scrollbar snap-x snap-mandatory">
++        {items.map((item) => (
++          <div key={item.id} className="min-w-[85vw] md:min-w-[30vw] flex-shrink-0 snap-center group cursor-pointer">
++            <div className="relative aspect-[3/4] overflow-hidden bg-stone mb-4">
++              <img 
++                src={item.img} 
++                alt={item.title}
++                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
++              />
++              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
++              
++              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
++                <button className="bg-paper text-ink px-4 py-2 font-sans text-xs uppercase tracking-widest">
++                  Quick Add
++                </button>
++              </div>
++            </div>
++            
++            <div className="flex justify-between items-start border-t border-ink pt-3">
++              <div className="flex flex-col">
++                <span className="font-sans text-xs text-ink/50 mb-1">{item.id}</span>
++                <span className="font-serif text-xl italic">{item.title}</span>
++              </div>
++              <span className="font-sans text-sm">{item.price}</span>
++            </div>
++          </div>
++        ))}
++        
++        {/* Spacer for right padding */}
++        <div className="min-w-[6rem]"></div>
++      </div>
++    </section>
++  );
++}
+\ No newline at end of file
+diff --git a/src/components/Footer.tsx b/src/components/Footer.tsx
+new file mode 100644
+index 0000000..e47321c
+--- /dev/null
++++ b/src/components/Footer.tsx
+@@ -0,0 +1,56 @@
++export default function Footer() {
++  return (
++    <footer className="bg-paper text-ink pt-24 pb-12 px-6 border-t border-ink">
++      <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
++        
++        <div className="col-span-2 md:col-span-1">
++          <h4 className="font-serif text-2xl font-bold mb-6">NOIR ET BLANC</h4>
++          <address className="font-sans text-xs not-italic leading-relaxed text-ink/60">
++            12 Rue de la Mode<br/>
++            75001 Paris, France<br/>
++            <br/>
++            studio@noiretblanc.com
++          </address>
++        </div>
++
++        <div className="flex flex-col gap-4">
++          <h5 className="font-sans text-xs font-bold uppercase tracking-widest mb-2">Shop</h5>
++          <a href="#" className="font-serif text-lg hover:italic">New Arrivals</a>
++          <a href="#" className="font-serif text-lg hover:italic">Ready to Wear</a>
++          <a href="#" className="font-serif text-lg hover:italic">Accessories</a>
++          <a href="#" className="font-serif text-lg hover:italic">Editorial</a>
++        </div>
++
++        <div className="flex flex-col gap-4">
++          <h5 className="font-sans text-xs font-bold uppercase tracking-widest mb-2">Legal</h5>
++          <a href="#" className="font-sans text-xs hover:underline">Privacy Policy</a>
++          <a href="#" className="font-sans text-xs hover:underline">Terms of Service</a>
++          <a href="#" className="font-sans text-xs hover:underline">Shipping & Returns</a>
++        </div>
++
++        <div className="col-span-2 md:col-span-1">
++          <h5 className="font-sans text-xs font-bold uppercase tracking-widest mb-4">Newsletter</h5>
++          <form className="flex border-b border-ink pb-2">
++            <input 
++              type="email" 
++              placeholder="YOUR EMAIL" 
++              className="bg-transparent border-none w-full focus:ring-0 placeholder:text-ink/30 font-sans text-sm"
++            />
++            <button className="font-sans text-xs font-bold uppercase hover:text-accent">
++              Submit
++            </button>
++          </form>
++        </div>
++      </div>
++
++      <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-ink/10">
++        <p className="font-sans text-[10px] uppercase tracking-widest text-ink/40">
++          © 2025 Noir et Blanc. All rights reserved.
++        </p>
++        <p className="font-sans text-[10px] uppercase tracking-widest text-ink/40 mt-4 md:mt-0">
++          Designed by Architecture
++        </p>
++      </div>
++    </footer>
++  );
++}
+\ No newline at end of file
+diff --git a/src/components/HeroCover.tsx b/src/components/HeroCover.tsx
+new file mode 100644
+index 0000000..b63acb6
+--- /dev/null
++++ b/src/components/HeroCover.tsx
+@@ -0,0 +1,53 @@
++export default function HeroCover() {
++  return (
++    <header className="relative w-full h-screen overflow-hidden flex flex-col justify-end pb-12 md:pb-24">
++      {/* Background Image */}
++      <div className="absolute inset-0 z-0">
++        <img 
++          src="<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/19621241/pexels-photo-19621241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="Black and white image of a fashion model at a gas station during the night."
++    width="4000"
++    height="5000"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/woman-wearing-white-dress-in-black-and-white-19621241/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by Dmitry Daltonik on Pexels
++    </a>
++  </div>
++</div>" 
++          alt="Editorial Cover" 
++          className="w-full h-full object-cover grayscale contrast-125"
++        />
++        <div className="absolute inset-0 bg-ink/10"></div>
++      </div>
++
++      {/* Floating Headlines */}
++      <div className="relative z-10 w-full px-4 md:px-12 pointer-events-none">
++        <div className="flex flex-col md:flex-row md:items-end justify-between border-t border-paper/40 pt-6">
++          <div className="flex flex-col">
++            <span className="font-sans text-xs md:text-sm tracking-[0.3em] text-paper uppercase mb-2">
++              Vol. 04 — FW25
++            </span>
++            <h2 className="font-serif text-6xl md:text-9xl text-paper mix-blend-overlay italic font-black leading-[0.8]">
++              SILHOUETTE
++            </h2>
++          </div>
++          
++          <div className="mt-8 md:mt-0 max-w-xs">
++            <p className="font-sans text-xs md:text-sm text-paper/90 leading-relaxed text-justify">
++              Redefining the structural integrity of modern garments through a lens of brutalist architecture and soft organic textures.
++            </p>
++          </div>
++        </div>
++
++        {/* Huge Background Text for Z-Index play */}
++        <h1 className="absolute top-[-60vh] left-1/2 -translate-x-1/2 text-[30vw] font-serif font-bold text-stroke-white opacity-20 whitespace-nowrap">
++          AVANT
++        </h1>
++      </div>
++    </header>
++  );
++}
+\ No newline at end of file
+diff --git a/src/components/ImageStatement.tsx b/src/components/ImageStatement.tsx
+new file mode 100644
+index 0000000..ab4c963
+--- /dev/null
++++ b/src/components/ImageStatement.tsx
+@@ -0,0 +1,66 @@
++export default function ImageStatement() {
++  return (
++    <section className="relative w-full py-32 bg-ink text-paper overflow-hidden">
++      <div className="absolute top-0 left-0 w-full h-full opacity-20">
++        <img 
++          src="<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/18599094/pexels-photo-18599094.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="Grainy black and white abstract texture with scratches, ideal for artistic backgrounds."
++    width="6819"
++    height="10000"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/monochrome-noise-structured-photo-18599094/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by Joana Miriam on Pexels
++    </a>
++  </div>
++</div>" 
++          className="w-full h-full object-cover"
++          alt="Texture"
++        />
++      </div>
++
++      <div className="relative container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
++        <div className="order-2 md:order-1">
++           <div className="relative">
++             <img 
++               src="<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/33018517/pexels-photo-33018517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="Side profile of a man in a black cap against a dark background."
++    width="1811"
++    height="2263"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/side-profile-portrait-of-a-man-wearing-a-cap-33018517/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by Max Zaharenkov on Pexels
++    </a>
++  </div>
++</div>"
++               alt="Profile"
++               className="w-full max-w-md mx-auto sepia-[.3] grayscale"
++             />
++             <div className="absolute -top-12 -left-12 w-24 h-24 bg-accent rounded-full blur-2xl opacity-50 mix-blend-screen"></div>
++           </div>
++        </div>
++
++        <div className="order-1 md:order-2 flex flex-col justify-center">
++          <h2 className="font-serif text-6xl md:text-8xl mb-8 leading-none">
++            VOID <br/> <span className="text-stone opacity-50 italic">FORM</span>
++          </h2>
++          <div className="border-l border-accent pl-6 ml-2">
++            <p className="font-sans text-lg text-stone/80 font-light max-w-md">
++              We strip away the inessential. What remains is the pure geometry of the human form, wrapped in textiles that breathe.
++            </p>
++            <button className="mt-8 px-8 py-3 border border-paper text-xs uppercase tracking-widest hover:bg-paper hover:text-ink transition-colors duration-300">
++              View Lookbook
++            </button>
++          </div>
++        </div>
++      </div>
++    </section>
++  );
++}
+\ No newline at end of file
+diff --git a/src/components/MarqueeStrip.tsx b/src/components/MarqueeStrip.tsx
+new file mode 100644
+index 0000000..c8b12e4
+--- /dev/null
++++ b/src/components/MarqueeStrip.tsx
+@@ -0,0 +1,17 @@
++interface MarqueeProps {
++  text: string;
++}
++
++export default function MarqueeStrip({ text }: MarqueeProps) {
++  return (
++    <div className="w-full bg-accent py-3 overflow-hidden whitespace-nowrap border-y border-ink">
++      <div className="inline-flex animate-[marquee_20s_linear_infinite]">
++        {[...Array(6)].map((_, i) => (
++          <span key={i} className="font-sans text-sm font-bold uppercase tracking-widest mx-4 text-paper">
++            {text}
++          </span>
++        ))}
++      </div>
++    </div>
++  );
++}
+\ No newline at end of file
+diff --git a/src/components/MinimalNav.tsx b/src/components/MinimalNav.tsx
+new file mode 100644
+index 0000000..83b0bd2
+--- /dev/null
++++ b/src/components/MinimalNav.tsx
+@@ -0,0 +1,32 @@
++import { Menu, Search, ShoppingBag } from 'lucide-react';
++
++export default function MinimalNav() {
++  return (
++    <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-6 mix-blend-difference text-paper">
++      <div className="flex items-center gap-6">
++        <button className="hover:opacity-70 transition-opacity">
++          <Menu className="w-6 h-6" />
++        </button>
++        <span className="hidden md:block font-sans text-xs tracking-widest uppercase">
++          Menu
++        </span>
++      </div>
++
++      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
++        <h1 className="font-serif text-2xl font-bold tracking-tighter">NOIR ET BLANC</h1>
++      </div>
++
++      <div className="flex items-center gap-6">
++        <button className="hover:opacity-70 transition-opacity">
++          <Search className="w-5 h-5" />
++        </button>
++        <button className="hover:opacity-70 transition-opacity flex items-center gap-2">
++          <ShoppingBag className="w-5 h-5" />
++          <span className="hidden md:block font-sans text-xs tracking-widest uppercase">
++            (0)
++          </span>
++        </button>
++      </div>
++    </nav>
++  );
++}
+\ No newline at end of file
+diff --git a/src/components/OverlappingGrid.tsx b/src/components/OverlappingGrid.tsx
+new file mode 100644
+index 0000000..a6f3744
+--- /dev/null
++++ b/src/components/OverlappingGrid.tsx
+@@ -0,0 +1,110 @@
++import { ArrowDownRight } from 'lucide-react';
++
++export default function OverlappingGrid() {
++  return (
++    <section className="py-24 px-4 md:px-12 w-full max-w-[1600px] mx-auto">
++      <div className="relative grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-8">
++        
++        {/* Block 1: Intro Text */}
++        <div className="md:col-span-4 flex flex-col justify-start pt-12">
++          <ArrowDownRight className="w-12 h-12 mb-6 text-accent" />
++          <h3 className="font-serif text-4xl md:text-5xl mb-6 leading-none">
++            The Architecture <br/> of <span className="italic text-accent">Cloth</span>
++          </h3>
++          <p className="font-sans text-sm leading-7 text-ink/70 max-w-xs text-justify">
++            We explore the boundaries between rigid structures and fluid motion. 
++            This collection challenges the wearer to embody the space they occupy.
++          </p>
++        </div>
++
++        {/* Block 2: Main Image (Overlapped) */}
++        <div className="md:col-span-5 relative z-10 md:mt-0">
++          <div className="aspect-[3/4] w-full bg-stone overflow-hidden">
++             <img 
++               src="<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/4814061/pexels-photo-4814061.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="A detailed shot of a crumpled black fabric, showcasing its smooth and wrinkled texture in a monochromatic tone."
++    width="4245"
++    height="6368"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/black-textile-with-creases-4814061/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by Karola G on Pexels
++    </a>
++  </div>
++</div>" 
++               alt="Fabric Detail"
++               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
++             />
++          </div>
++          <span className="absolute -bottom-6 -left-6 font-serif text-9xl text-ink z-20 mix-blend-exclusion opacity-50">
++            01
++          </span>
++        </div>
++
++        {/* Block 3: Vertical Text & Offset Image */}
++        <div className="md:col-span-3 flex flex-col justify-end relative md:-ml-12 z-20 mt-12 md:mt-32">
++          <div className="aspect-[4/5] w-3/4 self-end shadow-2xl">
++            <img 
++               src="<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/3756941/pexels-photo-3756941.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="Portrait of a young woman wearing headphones, enjoying music indoors with a casual expression."
++    width="5828"
++    height="3990"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/woman-in-gray-and-yellow-sweater-holding-white-headphones-3756941/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by Sound On on Pexels
++    </a>
++  </div>
++</div>" 
++               alt="Model Pose"
++               className="w-full h-full object-cover grayscale"
++             />
++          </div>
++          <div className="absolute top-0 right-full md:right-auto md:-left-8 h-full">
++            <p className="writing-vertical font-sans text-xs tracking-[0.4em] uppercase text-ink/40 h-full flex items-center rotate-180">
++              Structural Integrity Test — Phase One
++            </p>
++          </div>
++        </div>
++
++      </div>
++
++      {/* Second Row: Massive Text Overlap */}
++      <div className="mt-32 relative">
++        <h2 className="font-serif text-[12vw] leading-[0.8] text-center md:text-left mix-blend-exclusion text-white z-20 relative pointer-events-none">
++          UNFOLDING
++        </h2>
++        <div className="absolute top-1/4 right-0 md:right-24 w-full md:w-1/2 h-[500px] z-10">
++           <img 
++             src="<div className="relative">
++  <img 
++    src="https://images.pexels.com/photos/6226716/pexels-photo-6226716.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
++    alt="A creative studio portrait of two models in white clothing posing artistically against a green background."
++    width="6082"
++    height="4055"
++    className="w-full h-full object-cover"
++  />
++  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-2">
++    <a href="https://www.pexels.com/photo/models-standing-together-at-studio-6226716/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-400 hover:text-slate-300 transition-colors">
++      Photo by cottonbro studio on Pexels
++    </a>
++  </div>
++</div>" 
++             alt="Duo Shot"
++             className="w-full h-full object-cover"
++           />
++        </div>
++        <div className="hidden md:block absolute top-full right-1/2 w-64 bg-paper p-6 -mt-24 z-30 border border-ink">
++          <p className="font-serif italic text-xl mb-4">"A rebellion against the mundane."</p>
++          <a href="#" className="font-sans text-xs font-bold uppercase underline decoration-accent decoration-2 underline-offset-4">Read Article</a>
++        </div>
++      </div>
++    </section>
++  );
++}
+\ No newline at end of file
+diff --git a/src/index.css b/src/index.css
+index f1d8c73..85af570 100644
+--- a/src/index.css
++++ b/src/index.css
+@@ -1 +1,55 @@
++@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+ @import "tailwindcss";
++
++@theme {
++  --font-sans: "Inter", sans-serif;
++  --font-serif: "Playfair Display", serif;
++
++  --color-paper: #F4F1EA;
++  --color-ink: #111111;
++  --color-accent: #FF3300;
++  --color-stone: #E5E2DB;
++  
++  --spacing-18: 4.5rem;
++  --spacing-22: 5.5rem;
++  --spacing-30: 7.5rem;
++}
++
++/* Custom Utilities for Editorial Layout */
++@layer utilities {
++  .text-stroke {
++    -webkit-text-stroke: 1px var(--color-ink);
++    color: transparent;
++  }
++  
++  .text-stroke-white {
++    -webkit-text-stroke: 1px var(--color-paper);
++    color: transparent;
++  }
++
++  .blend-exclusion {
++    mix-blend-mode: exclusion;
++  }
++  
++  .blend-difference {
++    mix-blend-mode: difference;
++  }
++
++  .writing-vertical {
++    writing-mode: vertical-rl;
++  }
++}
++
++/* Smooth Scroll Behavior */
++html {
++  scroll-behavior: smooth;
++}
++
++/* Hide scrollbar for clean look in specific containers */
++.no-scrollbar::-webkit-scrollbar {
++  display: none;
++}
++.no-scrollbar {
++  -ms-overflow-style: none;
++  scrollbar-width: none;
++}
+\ No newline at end of file

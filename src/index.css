@@ -1,1 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-paper: #F4F1EA;
+  --color-ink: #111111;
+  --color-accent: #FF3300;
+  --color-stone: #E5E2DB;
+  
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+}
+
+/* Custom Utilities for Editorial Layout */
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px var(--color-ink);
+    color: transparent;
+  }
+  
+  .text-stroke-white {
+    -webkit-text-stroke: 1px var(--color-paper);
+    color: transparent;
+  }
+
+  .blend-exclusion {
+    mix-blend-mode: exclusion;
+  }
+  
+  .blend-difference {
+    mix-blend-mode: difference;
+  }
+
+  .writing-vertical {
+    writing-mode: vertical-rl;
+  }
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for clean look in specific containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
