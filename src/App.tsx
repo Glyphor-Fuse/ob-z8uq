@@ -1,4 +1,3 @@
-import React from 'react';
 import MinimalNav from './components/MinimalNav';
 import HeroCover from './components/HeroCover';
 import OverlappingGrid from './components/OverlappingGrid';
